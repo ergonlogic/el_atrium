@@ -44,7 +44,7 @@ projects[date][version] = "2.6"
 
 projects[designkit][type] = "module"
 projects[designkit][subdir] = "contrib"
-projects[designkit][version] = "1.0-beta1"
+;projects[designkit][version] = "1.0-beta1"
 
 projects[diff][type] = "module"
 projects[diff][subdir] = "contrib"

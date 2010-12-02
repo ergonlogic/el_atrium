@@ -32,6 +32,12 @@ projects[osso_provider][download][url] = git://github.com/developmentseed/osso_p
 ; CT Plus
 projects[ct_plus][location] = http://danepowell.com/fserver
 
+; CT Plus dependencies
+projects[comment_driven]
+projects[driven_cck]
+projects[filefield]
+projects[views_jsgantt]
+
 ; OA CT Plus
 projects[oa_ct_plus][location] = http://danepowell.com/fserver
 
@@ -41,6 +47,11 @@ projects[kt_bookmarks][subdir] = features
 projects[kt_bookmarks][download][type] = git
 projects[kt_bookmarks][download][url] = git://git.koumbit.net/drupal/contrib/features/kt_bookmarks.git
 
+; kt_bookmarks dependencies
+projects[filefield]
+projects[imagefield]
+projects[link]
+projects[taxonomy_export]
 
 ; CT relationships
 ; need a feature to define parent/child relationships for projects & cases

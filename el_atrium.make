@@ -67,7 +67,7 @@ projects[ct_plus][location] = http://danepowell.com/fserver
 
 ; CT Plus dependencies
 projects[comment_driven]
-projects[driven_cck]
+projects[driven]
 projects[filefield]
 projects[views_jsgantt]
 

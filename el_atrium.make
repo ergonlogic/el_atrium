@@ -29,6 +29,14 @@ projects[osso_provider][subdir] = features
 projects[osso_provider][download][type] = git
 projects[osso_provider][download][url] = git://github.com/developmentseed/osso_provider.git
 
+; OSSO Provider dependencies
+projects[openid_provider_sso]
+
+projects[push_hub]
+
+projects[keyauth]
+
+
 ; CT Plus
 projects[ct_plus][location] = http://danepowell.com/fserver
 

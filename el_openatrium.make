@@ -45,6 +45,9 @@ projects[date][version] = "2.6"
 projects[designkit][type] = "module"
 projects[designkit][subdir] = "contrib"
 ;projects[designkit][version] = "1.0-beta1"
+projects[designkit][download][type] = wget
+projects[designkit][download][url] = "http://ftp.drupal.org/files/projects/designkit-6.x-1.0-beta1.tar.gz"
+
 
 projects[diff][type] = "module"
 projects[diff][subdir] = "contrib"

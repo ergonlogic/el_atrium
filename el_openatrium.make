@@ -1,5 +1,6 @@
 ; $Id: openatrium.make,v 1.79 2010/08/24 06:06:41 yhahn Exp $
 core = "6.x"
+api = 2
 
 ; Contrib projects 
 

@@ -20,22 +20,47 @@ projects[el_openatrium][download][type] = git
 projects[el_openatrium][download][url] = git://github.com/ergonlogic/el_openatrium.git
 
 ;;;;;;;;;;;;;;;;;;;;;;;
-; Additional features ;
+;   OA OSSO provider  ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-; OA OSSO provider
 projects[osso_provider][type] = module
 projects[osso_provider][subdir] = features
 projects[osso_provider][download][type] = git
 projects[osso_provider][download][url] = git://github.com/developmentseed/osso_provider.git
 
 ; OSSO Provider dependencies
-projects[openid_provider_sso]
+projects[drupal_queue][version] = "1.1"
 
-projects[push_hub]
+projects[keyauth][type] = "module"
+projects[keyauth][download][type] = "git"
+projects[keyauth][download][url] = "git://github.com/developmentseed/keyauth.git"
 
-projects[keyauth]
+projects[openid_provider][type] = "module"
+projects[openid_provider][download][type] = "cvs"
+projects[openid_provider][download][module] = "contributions/modules/openid_provider"
+projects[openid_provider][download][revision] = "DRUPAL-6--1:2010-03-02"
+; http://drupal.org/node/621956#comment-2665966
+projects[openid_provider][patch][] = "http://drupal.org/files/issues/621956-13_openid_provider_form.patch"
+; http://drupal.org/node/810784
+projects[openid_provider][patch][] = "http://drupal.org/files/issues/openid_provider-slow_association.patch"
 
+; Open ID Provider SSO
+projects[openid_provider_sso][type] = "module"
+projects[openid_provider_sso][download][type] = "git"
+projects[openid_provider_sso][download][url] = "git://github.com/developmentseed/openid_provider_sso.git"
+
+; PuSH Hub
+projects[push_hub][type] = "module"
+projects[push_hub][download][type] = "git"
+projects[push_hub][download][url] = "git://github.com/developmentseed/push_hub.git"
+
+; XRDS Simple
+projects[xrds_simple][version] = "1.0"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;     OA CT Plus      ;
+;;;;;;;;;;;;;;;;;;;;;;;
 
 ; CT Plus
 projects[ct_plus][location] = http://danepowell.com/fserver
@@ -49,7 +74,13 @@ projects[views_jsgantt]
 ; OA CT Plus
 projects[oa_ct_plus][location] = http://danepowell.com/fserver
 
-; kt_bookmarks
+; CT relationships
+; need a feature to define parent/child relationships for projects & cases
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;     kt_bookmarks    ;
+;;;;;;;;;;;;;;;;;;;;;;;
+
 projects[kt_bookmarks][type] = module
 projects[kt_bookmarks][subdir] = features
 projects[kt_bookmarks][download][type] = git
@@ -61,5 +92,4 @@ projects[imagefield]
 projects[link]
 projects[taxonomy_export]
 
-; CT relationships
-; need a feature to define parent/child relationships for projects & cases
+

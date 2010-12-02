@@ -1,57 +1,72 @@
-; $Id: openatrium.make,v 1.79 2010/08/24 06:06:41 yhahn Exp $
 core = "6.x"
 api = 2
 
 ; Contrib projects 
-
+projects[admin][type] = "module"
 projects[admin][subdir] = "contrib"
 projects[admin][version] = "2.0"
 
+projects[boxes][type] = "module"
 projects[boxes][subdir] = "contrib"
 projects[boxes][version] = "1.0"
 
+projects[cck][type] = "module"
 projects[cck][subdir] = "contrib"
 projects[cck][version] = "2.8"
 
+projects[codefilter][type] = "module"
 projects[codefilter][subdir] = "contrib"
 projects[codefilter][version] = "1.0"
 
+projects[comment_upload][type] = "module"
 projects[comment_upload][subdir] = "contrib"
 projects[comment_upload][version] = "1.0-alpha5"
 
+projects[content_profile][type] = "module"
 projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0"
 
+projects[context][type] = "module"
 projects[context][subdir] = "contrib"
 projects[context][version] = "3.0"
 
+projects[crayon][type] = "module"
 projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta2"
 
+projects[ctools][type] = "module"
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 
+projects[date][type] = "module"
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
 
+projects[designkit][type] = "module"
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
 
+projects[diff][type] = "module"
 projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
+projects[features][type] = "module"
 projects[features][subdir] = "contrib"
 projects[features][version] = "1.0"
 
+projects[feeds][type] = "module"
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
 
+projects[imageapi][type] = "module"
 projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.8"
 
+projects[imagecache][type] = "module"
 projects[imagecache][subdir] = "contrib"
 projects[imagecache][version] = "2.0-beta10"
 
+projects[imagecache_profiles][type] = "module"
 projects[imagecache_profiles][subdir] = "contrib"
 projects[imagecache_profiles][version] = "1.3"
 
@@ -63,67 +78,89 @@ projects[itweak_upload][download][revision] = "DRUPAL-6--2-4"
 ; http://drupal.org/node/888198
 projects[itweak_upload][patch][] = "http://drupal.org/files/issues/itweak_upload_weight.patch"
 
+projects[jquery_ui][type] = "module"
 projects[jquery_ui][subdir] = "contrib"
 projects[jquery_ui][version] = "1.3"
 
+projects[libraries][type] = "module"
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "1.0-alpha1"
 
+projects[mailcomment][type] = "module"
 projects[mailcomment][subdir] = "contrib"
 projects[mailcomment][version] = "1.0"
 
+projects[mailhandler][type] = "module"
 projects[mailhandler][subdir] = "contrib"
 projects[mailhandler][version] = "1.11"
 
+projects[markdown][type] = "module"
 projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
+projects[messaging][type] = "module"
 projects[messaging][subdir] = "contrib"
 projects[messaging][version] = "2.2"
 
+projects[nodeformcols][type] = "module"
 projects[nodeformcols][subdir] = "contrib"
 projects[nodeformcols][version] = "1.6"
 
+projects[notifications][type] = "module"
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.2"
 
+projects[notifications_team][type] = "module"
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
 
+projects[og][type] = "module"
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.1"
 
+projects[openidadmin][type] = "module"
 projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
 
+projects[parser_ical][type] = "module"
 projects[parser_ical][subdir] = "contrib"
 projects[parser_ical][version] = "2.0-alpha2"
 
+projects[prepopulate][type] = "module"
 projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "2.1"
 
+projects[purl][type] = "module"
 projects[purl][subdir] = "contrib"
 projects[purl][version] = "1.0-beta13"
 
+projects[reldate][type] = "module"
 projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
+projects[spaces][type] = "module"
 projects[spaces][subdir] = "contrib"
 projects[spaces][version] = "3.0"
 
+projects[strongarm][type] = "module"
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
+projects[token][type] = "module"
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.14"
 
+projects[transliteration][type] = "module"
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.0"
 
+projects[ucreate][type] = "module"
 projects[ucreate][subdir] = "contrib"
 projects[ucreate][version] = "1.0-beta4"
 
+
 ; Patched
+projects[casetracker][type] = "module"
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta8"
 ;http://drupal.org/node/839926
@@ -140,25 +177,33 @@ projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/at
 projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_module.patch"
 
 ; Custom modules
+
+projects[litecal][type] = "module"
 projects[litecal][subdir] = "custom"
 projects[litecal][location] = "http://code.developmentseed.org/fserver"
 projects[litecal][version] = "1.0-alpha4"
 
+projects[feedapi2feeds][type] = "module"
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
 projects[feedapi2feeds][version] = "1.0-alpha1"
 
+projects[xref][type] = "module"
 projects[xref][subdir] = "custom"
 projects[xref][location] = "http://code.developmentseed.org/fserver"
 projects[xref][version] = "1.0-alpha2"
 
 ; Development modules
+
+projects[coder][type] = "module"
 projects[coder][subdir] = "developer"
 projects[coder][version] = "2.0-beta1"
 
+projects[devel][type] = "module"
 projects[devel][subdir] = "developer"
 projects[devel][version] = "1.21"
 
+projects[schema][type] = "module"
 projects[schema][subdir] = "developer"
 projects[schema][version] = "1.7"
 
@@ -169,6 +214,7 @@ projects[simpletest][download][module] = "contributions/modules/simpletest"
 projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
 
 ; Features
+projects[atrium_features][type] = "module"
 projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
 projects[atrium_features][version] = "1.0-alpha9"
 
@@ -179,20 +225,26 @@ projects[core_translation][download][type] = "cvs"
 projects[core_translation][download][module] = "contributions/modules/core_translation"
 projects[core_translation][download][revision] = "HEAD:2010-02-17"
 
+projects[l10n_client][type] = "module"
 projects[l10n_client][subdir] = "l10n"
 projects[l10n_client][version] = "1.7"
 
+projects[l10n_update][type] = "module"
 projects[l10n_update][subdir] = "l10n"
 projects[l10n_update][location] = "http://code.developmentseed.org/fserver"
 projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
+
+projects[tao][type] = "theme"
 projects[tao][location] = "http://code.developmentseed.org/fserver"
 projects[tao][version] = "3.1"
 
+projects[rubik][type] = "theme"
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
 projects[rubik][version] = "3.0-beta1"
 
+projects[ginkgo][type] = "theme"
 projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
 projects[ginkgo][version] = "1.0-alpha9"
 

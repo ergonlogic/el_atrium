@@ -1,10 +1,10 @@
 <?php
-// $Id: openatrium.profile,v 1.15 2010/08/11 04:02:58 yhahn Exp $
+// $Id: el_openatrium.profile,v 1.15 2010/08/11 04:02:58 yhahn Exp $
 
 /**
  * Implementation of hook_profile_details().
  */
-function openatrium_profile_details() {
+function el_openatrium_profile_details() {
   return array(
     'name' => 'Open Atrium',
     'description' => 'Open Atrium by Development Seed.',
@@ -15,7 +15,7 @@ function openatrium_profile_details() {
 /**
  * Implementation of hook_profile_modules().
  */
-function openatrium_profile_modules() {
+function el_openatrium_profile_modules() {
   $modules = array(
      // Drupal core
     'block',
@@ -70,7 +70,7 @@ function openatrium_profile_modules() {
   // If language is not English we add the 'atrium_translate' module the first
   // To get some modules installed properly we need to have translations loaded
   // We also use it to check connectivity with the translation server on hook_requirements()
-  if (_openatrium_language_selected()) {
+  if (_el_openatrium_language_selected()) {
     // We need locale before l10n_update because it adds fields to locale tables
     $modules[] = 'locale';
     $modules[] = 'l10n_update';
@@ -83,7 +83,7 @@ function openatrium_profile_modules() {
 /**
  * Returns an array list of atrium features (and supporting) modules.
  */
-function _openatrium_atrium_modules() {
+function _el_openatrium_atrium_modules() {
   return array(
     // Strongarm
     'strongarm',
@@ -118,8 +118,8 @@ function _openatrium_atrium_modules() {
 /**
  * Implementation of hook_profile_task_list().
  */
-function openatrium_profile_task_list() {
-  if (_openatrium_language_selected()) {
+function el_openatrium_profile_task_list() {
+  if (_el_openatrium_language_selected()) {
     $tasks['intranet-translation-batch'] = st('Download and import translation');
   }
   $tasks['intranet-modules-batch'] = st('Install intranet modules');
@@ -130,7 +130,7 @@ function openatrium_profile_task_list() {
 /**
  * Implementation of hook_profile_tasks().
  */
-function openatrium_profile_tasks(&$task, $url) {
+function el_openatrium_profile_tasks(&$task, $url) {
   global $profile, $install_locale;
   
   // Just in case some of the future tasks adds some output
@@ -143,10 +143,10 @@ function openatrium_profile_tasks(&$task, $url) {
     // unless we repopulate it from the ,newly available, database.
     language_list('name', TRUE);
 
-    if (_openatrium_language_selected() && module_exists('atrium_translate')) {
+    if (_el_openatrium_language_selected() && module_exists('atrium_translate')) {
       module_load_install('atrium_translate');
       if ($batch = atrium_translate_create_batch($install_locale, 'install')) {
-        $batch['finished'] = '_openatrium_translate_batch_finished';
+        $batch['finished'] = '_el_openatrium_translate_batch_finished';
         // Remove temporary variables and set install task
         variable_del('install_locale_batch_components');
         variable_set('install_task', 'intranet-translation-batch');
@@ -168,13 +168,13 @@ function openatrium_profile_tasks(&$task, $url) {
   
   // Install some more modules and maybe localization helpers too
   if ($task == 'intranet-modules') {
-    $modules = _openatrium_atrium_modules();
+    $modules = _el_openatrium_atrium_modules();
     $files = module_rebuild_cache();
     // Create batch
     foreach ($modules as $module) {
       $batch['operations'][] = array('_install_module_batch', array($module, $files[$module]->info['name']));
     }    
-    $batch['finished'] = '_openatrium_profile_batch_finished';
+    $batch['finished'] = '_el_openatrium_profile_batch_finished';
     $batch['title'] = st('Installing @drupal', array('@drupal' => drupal_install_profile_name()));
     $batch['error_message'] = st('The installation has encountered an error.');
 
@@ -192,9 +192,9 @@ function openatrium_profile_tasks(&$task, $url) {
   // @todo Review for localization, the time zone cannot be set that way either
   if ($task == 'intranet-configure') {
     $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
-    $batch['operations'][] = array('_openatrium_intranet_configure', array());
-    $batch['operations'][] = array('_openatrium_intranet_configure_check', array());
-    $batch['finished'] = '_openatrium_intranet_configure_finished';
+    $batch['operations'][] = array('_el_openatrium_intranet_configure', array());
+    $batch['operations'][] = array('_el_openatrium_intranet_configure_check', array());
+    $batch['finished'] = '_el_openatrium_intranet_configure_finished';
     variable_set('install_task', 'intranet-configure-batch');
     batch_set($batch);
     batch_process($url, $url);
@@ -208,7 +208,7 @@ function openatrium_profile_tasks(&$task, $url) {
 /**
  * Check whether we are installing in a language other than English
  */
-function _openatrium_language_selected() {
+function _el_openatrium_language_selected() {
   global $install_locale;
   return !empty($install_locale) && ($install_locale != 'en');
 }
@@ -216,7 +216,7 @@ function _openatrium_language_selected() {
 /**
  * Configuration. First stage.
  */
-function _openatrium_intranet_configure() {
+function _el_openatrium_intranet_configure() {
   global $install_locale;
 
   // Disable the english locale if using a different default locale.
@@ -251,7 +251,7 @@ function _openatrium_intranet_configure() {
 /**
  * Configuration. Second stage.
  */
-function _openatrium_intranet_configure_check() {
+function _el_openatrium_intranet_configure_check() {
   // This isn't actually necessary as there are no node_access() entries,
   // but we run it to prevent the "rebuild node access" message from being
   // shown on install.
@@ -263,7 +263,7 @@ function _openatrium_intranet_configure_check() {
   // Set default theme. This must happen after drupal_flush_all_caches(), which
   // will run system_theme_data() without detecting themes in the install
   // profile directory.
-  _openatrium_system_theme_data();
+  _el_openatrium_system_theme_data();
   db_query("UPDATE {blocks} SET status = 0, region = ''"); // disable all DB blocks
   db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'garland');
   db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'ginkgo');
@@ -298,7 +298,7 @@ function _openatrium_intranet_configure_check() {
  * 
  * @todo Handle error condition
  */
-function _openatrium_intranet_configure_finished($success, $results) {
+function _el_openatrium_intranet_configure_finished($success, $results) {
   variable_set('atrium_install', 1);
   // Get out of this batch and let the installer continue. If loaded translation,
   // we skip the locale remaining batch and move on to the next.
@@ -317,7 +317,7 @@ function _openatrium_intranet_configure_finished($success, $results) {
  *
  * Advance installer task to language import.
  */
-function _openatrium_profile_batch_finished($success, $results) {
+function _el_openatrium_profile_batch_finished($success, $results) {
   variable_set('install_task', 'intranet-configure');
 }
 
@@ -326,7 +326,7 @@ function _openatrium_profile_batch_finished($success, $results) {
  *
  * Advance installer task to the configure screen.
  */
-function _openatrium_translate_batch_finished($success, $results) {
+function _el_openatrium_translate_batch_finished($success, $results) {
   include_once 'includes/locale.inc';
   // Let the installer now we've already imported locales
   variable_set('atrium_translate_done', 1);
@@ -348,7 +348,7 @@ function _openatrium_translate_batch_finished($success, $results) {
  */
 function system_form_install_select_profile_form_alter(&$form, $form_state) {
   foreach($form['profile'] as $key => $element) {
-    $form['profile'][$key]['#value'] = 'openatrium';
+    $form['profile'][$key]['#value'] = 'el_openatrium';
   }
 }
 
@@ -390,9 +390,9 @@ function system_form_install_configure_form_alter(&$form, $form_state) {
  * is populated during install prior to active install profile awareness.
  * This workaround makes enabling themes in profiles/[profile]/themes possible.
  */
-function _openatrium_system_theme_data() {
+function _el_openatrium_system_theme_data() {
   global $profile;
-  $profile = 'openatrium';
+  $profile = 'el_openatrium';
 
   $themes = drupal_system_listing('\.info$', 'themes');
   $engines = drupal_system_listing('\.engine$', 'themes/engines');

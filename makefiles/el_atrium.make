@@ -15,9 +15,9 @@ includes[pressflow] = ../../Makefiles/el_pressflow.make
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;    EL OA Profile    ;
 ;;;;;;;;;;;;;;;;;;;;;;;
-projects[el_openatrium][type] = profile
-projects[el_openatrium][download][type] = git
-projects[el_openatrium][download][url] = git://github.com/ergonlogic/el_atrium.git
+projects[el_atrium][type] = profile
+projects[el_atrium][download][type] = git
+projects[el_atrium][download][url] = git://github.com/ergonlogic/el_atrium.git
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;   OA OSSO provider  ;

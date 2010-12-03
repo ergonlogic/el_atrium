@@ -6,9 +6,9 @@
  */
 function el_atrium_profile_details() {
   return array(
-    'name' => 'Open Atrium',
-    'description' => 'Open Atrium by Development Seed.',
-    'old_short_name' => 'atrium_installer',
+    'name' => 'EL Atrium',
+    'description' => 'Ergon Logic\'s delta of Open Atrium by Development Seed.',
+    'old_short_name' => 'el_atrium_installer',
   );
 }
 
@@ -115,6 +115,7 @@ function _el_atrium_atrium_modules() {
     // EL Atrium features
     'kt_bookmarks', 'osso_provider', 'oa_ct_plus',
     // dependencies: comment_driven, ct_plus, driven, drupal_queue, filefield, imagefield, keyauth, link, openid_provider, openid_provider_sso, push_hub, taxonomy_export, views_jsgantt, xrds_simple
+    // socialcalc
   );
 }
 

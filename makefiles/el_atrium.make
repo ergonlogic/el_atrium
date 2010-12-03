@@ -4,8 +4,8 @@ api = 2
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the latest Pressflow core
 ;    Pressflow Core   ;   From: files.pressflow.org 
 ;;;;;;;;;;;;;;;;;;;;;;;   Version: current(6.19.96)  Date: 2010/12/02
-includes[pressflow] = "https://github.com/ergonlogic/Makefiles/raw/master/el_pressflow.make"
-;includes[pressflow] = ../../code/Makefiles/el_pressflow.make
+;includes[pressflow] = "https://github.com/ergonlogic/Makefiles/raw/master/el_pressflow.make"
+includes[pressflow] = ../../Makefiles/el_pressflow.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the standard Open Atrium makefile
 ;    Open Atrium      ;   From: drupal.org via "browse CVS" with latest tag
@@ -98,8 +98,8 @@ projects[sheetnode][type] = module
 projects[sheetnode][subdir] = contrib
 
 ;library
-projects[socialcalc][download][type] = git
-projects[socialcalc][download][url] = http://github.com/infojunkie/socialcalc/tarball/master
+;libraries[socialcalc][download][type] = git
+;libraries[socialcalc][download][url] = http://github.com/infojunkie/socialcalc/tarball/master
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;       WYSIWYG       ;

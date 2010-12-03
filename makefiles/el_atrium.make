@@ -10,7 +10,8 @@ includes[pressflow] = ../../Makefiles/el_pressflow.make
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the standard Open Atrium makefile
 ;    Open Atrium      ;   From: drupal.org via "browse CVS" with latest tag
 ;;;;;;;;;;;;;;;;;;;;;;;   Version: 6.x-1.0-beta8     Date: 2010/12/02
-; includes[openatrium] = "http://drupalcode.org/viewvc/drupal/contributions/profiles/openatrium/openatrium.make?revision=1.79&view=co&pathrev=DRUPAL-6--1-0-BETA8"
+;includes[openatrium] = "http://drupalcode.org/viewvc/drupal/contributions/profiles/openatrium/openatrium.make?revision=1.79&view=co&pathrev=DRUPAL-6--1-0-BETA8"
+includes[openatrium] = openatrium.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;    EL OA Profile    ;

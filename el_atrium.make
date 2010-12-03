@@ -66,10 +66,10 @@ projects[xrds_simple][version] = "1.0"
 projects[ct_plus][location] = http://danepowell.com/fserver
 
 ; CT Plus dependencies
-projects[comment_driven]
-projects[driven]
-projects[filefield]
-projects[views_jsgantt]
+projects[] = comment_driven
+projects[] = driven
+projects[] = filefield
+projects[] = views_jsgantt
 
 ; OA CT Plus
 projects[oa_ct_plus][location] = http://danepowell.com/fserver
@@ -87,9 +87,21 @@ projects[kt_bookmarks][download][type] = git
 projects[kt_bookmarks][download][url] = git://git.koumbit.net/drupal/contrib/features/kt_bookmarks.git
 
 ; kt_bookmarks dependencies
-projects[filefield]
-projects[imagefield]
-projects[link]
-projects[taxonomy_export]
+projects[] = imagefield
+projects[] = link
+projects[] = taxonomy_export
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;       Sheetnode     ;
+;;;;;;;;;;;;;;;;;;;;;;;
+projects[sheetnode][type] = module
+projects[sheetnode][subdir] = contrib
+
+;library
+projects[socialcalc][download][type] = git
+projects[socialcalc][download][url] = http://github.com/infojunkie/socialcalc/tarball/master
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;       WYSIWYG       ;
+;;;;;;;;;;;;;;;;;;;;;;;
 

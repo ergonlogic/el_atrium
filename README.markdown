@@ -6,9 +6,9 @@ in a couple ways that I feel make it more useful. Namely by:
 
 * running it on Pressflow Core;
 * including these features: 
- * OSSO Provider (from https://github.com/developmentseed/osso_provider);
- * CT Plus for OA (from http://danepowell.com/fserver);
- * Koumbit Bookmarks (from http://git.koumbit.net/?p=drupal/contrib/features/kt_bookmarks.git;a=summary);
+        * OSSO Provider (from https://github.com/developmentseed/osso_provider);
+        * CT Plus for OA (from http://danepowell.com/fserver);
+        * Koumbit Bookmarks (from http://git.koumbit.net/?p=drupal/contrib/features/kt_bookmarks.git;a=summary);
 * and this module: sheetnode;
 * building everything into makefiles for easy implementation on Aegir.
 

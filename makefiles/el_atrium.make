@@ -4,8 +4,8 @@ api = 2
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the latest Pressflow core
 ;    Pressflow Core   ;   From: files.pressflow.org 
 ;;;;;;;;;;;;;;;;;;;;;;;   Version: current(6.19.96)  Date: 2010/12/02
-; includes[pressflow] = "https://github.com/ergonlogic/Makefiles/raw/master/el_pressflow.make"
-includes[pressflow] = ../../code/Makefiles/el_pressflow.make
+includes[pressflow] = "https://github.com/ergonlogic/Makefiles/raw/master/el_pressflow.make"
+;includes[pressflow] = ../../code/Makefiles/el_pressflow.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the standard Open Atrium makefile
 ;    Open Atrium      ;   From: drupal.org via "browse CVS" with latest tag
@@ -17,7 +17,7 @@ includes[pressflow] = ../../code/Makefiles/el_pressflow.make
 ;;;;;;;;;;;;;;;;;;;;;;;
 projects[el_openatrium][type] = profile
 projects[el_openatrium][download][type] = git
-projects[el_openatrium][download][url] = git://github.com/ergonlogic/el_openatrium.git
+projects[el_openatrium][download][url] = git://github.com/ergonlogic/el_atrium.git
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;   OA OSSO provider  ;

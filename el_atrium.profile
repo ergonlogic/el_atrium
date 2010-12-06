@@ -350,11 +350,11 @@ function _el_atrium_translate_batch_finished($success, $results) {
  *
  * Set Open Atrium as default install profile.
  */
-function system_form_install_select_profile_form_alter(&$form, $form_state) {
-  foreach($form['profile'] as $key => $element) {
-    $form['profile'][$key]['#value'] = 'el_atrium';
-  }
-}
+//function system_form_install_select_profile_form_alter(&$form, $form_state) {
+//  foreach($form['profile'] as $key => $element) {
+//   $form['profile'][$key]['#value'] = 'el_atrium';
+//  }
+//}
 
 /**
  * Set English as default language.
@@ -362,32 +362,32 @@ function system_form_install_select_profile_form_alter(&$form, $form_state) {
  * If no language selected, the installation crashes. I guess English should be the default 
  * but it isn't in the default install. @todo research, core bug?
  */
-function system_form_install_select_locale_form_alter(&$form, $form_state) {
-  $form['locale']['en']['#value'] = 'en';
-}
+//function system_form_install_select_locale_form_alter(&$form, $form_state) {
+//  $form['locale']['en']['#value'] = 'en';
+//}
 
 /**
  * Alter the install profile configuration form and provide timezone location options.
  */
-function system_form_install_configure_form_alter(&$form, $form_state) {
-  $form['site_information']['site_name']['#default_value'] = 'Open Atrium';
-  $form['site_information']['site_mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
-  $form['admin_account']['account']['name']['#default_value'] = 'admin';
-  $form['admin_account']['account']['mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
+//function system_form_install_configure_form_alter(&$form, $form_state) {
+//  $form['site_information']['site_name']['#default_value'] = 'Open Atrium';
+//  $form['site_information']['site_mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
+//  $form['admin_account']['account']['name']['#default_value'] = 'admin';
+//  $form['admin_account']['account']['mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
 
-  if (function_exists('date_timezone_names') && function_exists('date_timezone_update_site')) {
-    $form['server_settings']['date_default_timezone']['#access'] = FALSE;
-    $form['server_settings']['#element_validate'] = array('date_timezone_update_site');
-    $form['server_settings']['date_default_timezone_name'] = array(
-      '#type' => 'select',
-      '#title' => t('Default time zone'),
-      '#default_value' => NULL,
-      '#options' => date_timezone_names(FALSE, TRUE),
-      '#description' => t('Select the default site time zone. If in doubt, choose the timezone that is closest to your location which has the same rules for daylight saving time.'),
-      '#required' => TRUE,
-    );
-  }
-}
+//  if (function_exists('date_timezone_names') && function_exists('date_timezone_update_site')) {
+//    $form['server_settings']['date_default_timezone']['#access'] = FALSE;
+//    $form['server_settings']['#element_validate'] = array('date_timezone_update_site');
+//    $form['server_settings']['date_default_timezone_name'] = array(
+//      '#type' => 'select',
+//      '#title' => t('Default time zone'),
+//      '#default_value' => NULL,
+//      '#options' => date_timezone_names(FALSE, TRUE),
+//      '#description' => t('Select the default site time zone. If in doubt, choose the timezone that is closest to your location which has the same rules for daylight saving time.'),
+//      '#required' => TRUE,
+//    );
+//  }
+//}
 
 /**
  * Reimplementation of system_theme_data(). The core function's static cache

@@ -4,21 +4,22 @@ api = 2
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the latest Pressflow core
 ;    Pressflow Core   ;   From: files.pressflow.org 
 ;;;;;;;;;;;;;;;;;;;;;;;   Version: current(6.19.96)  Date: 2010/12/02
-;includes[pressflow] = "http://github.com/ergonlogic/Makefiles/raw/master/el_pressflow.make"
-projects[pressflow][type] = "core"
-projects[pressflow][download][type] = "get"
-projects[pressflow][download][url] = "http://files.pressflow.org/pressflow-6-current.tar.gz"
+includes[pressflow] = "http://github.com/ergonlogic/Makefiles/raw/master/el_pressflow.make"
+;projects[pressflow][type] = "core"
+;projects[pressflow][download][type] = "get"
+;projects[pressflow][download][url] = "http://files.pressflow.org/pressflow-6-current.tar.gz"
 
 ;;;;;;;;;;;;;;;;;;;;;;;   Include the standard Open Atrium profile
 ;    Open Atrium      ;   From: drupal.org via "browse CVS" with latest tag
 ;;;;;;;;;;;;;;;;;;;;;;;   Version: 6.x-1.0-beta8     Date: 2010/12/02
-projects[openatrium][type] = profile
-projects[openatrium][download][type] = cvs
-projects[openatrium][download][module] = contributions/profiles/openatrium
-projects[openatrium][download][revision] = DRUPAL-6--1-0-BETA8
+;projects[openatrium][type] = profile
+;projects[openatrium][download][type] = cvs
+;projects[openatrium][download][module] = contributions/profiles/openatrium
+;projects[openatrium][download][revision] = DRUPAL-6--1-0-BETA8
 
 
-
+;includes[oa-modules] = "http://github.com/ergonlogic/el_atrium/raw/master/openatrium.make"
+includes[oa] = "http://drupalcode.org/viewvc/drupal/contributions/profiles/openatrium/openatrium.make?revision=1.85&view=co"
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;    EL OA Profile    ;
